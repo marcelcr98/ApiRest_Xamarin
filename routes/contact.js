@@ -21,7 +21,7 @@ router.get('/:id', function(req, res) {
     })
 })
 
-router.post('/', function(req, res) {
+router.post('/create', function(req, res) {
     model.addProduct(req.body, function(err, result) {
         res.json({data: result, error: err});
     })
