@@ -15,7 +15,6 @@ let productos = {
 
 
   store( req, res ){
-    val_fullid = req.body.id;
     val_fullName = req.body.fullName;
     val_email = req.body.email;
     val_phoneNumber = req.body.phoneNumber;
