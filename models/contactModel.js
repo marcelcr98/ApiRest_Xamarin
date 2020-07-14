@@ -11,18 +11,20 @@ let model = {
 
 
         let data = {
-            fullName: input.fullName,
-            email: input.email,
-            phoneNumber: input.phoneNumber
+            name: input.name,
+            lastname: input.lastname,
+            gender: input.gender,
+            birth: input.birth,
         }
         return db.query("INSERT INTO contacts SET ?", [data], cb)
     },
     updateProduct: (input, cb) => {
         let data = {
             id: input.id,
-            fullName: input.fullName,
-            email: input.email,
-            phoneNumber: input.phoneNumber
+            name: input.name,
+            lastname: input.lastname,
+            gender: input.gender,
+            birth: input.birth,
         }
         return db.query("UPDATE contacts SET ? WHERE id=?", [data, input.id], cb)
     },

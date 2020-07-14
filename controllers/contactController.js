@@ -15,11 +15,12 @@ let productos = {
 
 
   store( req, res ){
-    val_fullName = req.body.fullName;
-    val_email = req.body.email;
-    val_phoneNumber = req.body.phoneNumber;
-    let sql = "INSERT INTO contacts(fullName,email,phoneNumber) VALUES(?,?,?)";
-    db.query(sql,[val_fullName,val_email,val_phoneNumber],function(err, newData){
+    val_name = req.body.name;
+    val_lastname = req.body.lastname;
+    val_gender = req.body.gender;
+    val_birth = req.body.birth;
+    let sql = "INSERT INTO contacts(name,lastname,gender,birth) VALUES(?,?,?,?)";
+    db.query(sql,[val_name,val_lastname,val_gender,val_birth],function(err, newData){
       if(err){
         console.log(err);
         res.sendStatus(500);
@@ -42,11 +43,12 @@ let productos = {
   },
   edit( req, res ){
     val_id = req.body.id;
-    val_fullName = req.body.fullName;
-    val_email = req.body.email;
-    val_phoneNumber = req.body.phoneNumber;
-    let sql = "UPDATE contacts SET fullName=?, email=? ,phoneNumber=? WHERE id=?";
-    db.query(sql,[val_fullName,val_email,val_phoneNumber],function(err, newData){
+    val_name = req.body.name;
+    val_lastname = req.body.lastname;
+    val_gender = req.body.gender;
+    val_birth = req.body.birth;
+    let sql = "UPDATE contacts SET name=?, lastname=? ,gender=? ,birth=? WHERE id=?";
+    db.query(sql,[val_name,val_lastname,val_gender,val_birth],function(err, newData){
       if(err){
         res.sendStatus(500);
       }else{
