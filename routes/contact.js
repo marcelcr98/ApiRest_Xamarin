@@ -27,7 +27,7 @@ router.post('/', function(req, res) {
     })
 })
 
-router.put('/:id', function(req, res) {
+router.put('/', function(req, res) {
     model.updateProduct(req.body, function(err, result) {
         res.json({data: result, error: err});
     })
